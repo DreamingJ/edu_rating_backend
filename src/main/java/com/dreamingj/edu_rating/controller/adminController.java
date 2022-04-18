@@ -1,18 +1,26 @@
 package com.dreamingj.edu_rating.controller;
 
-import com.dreamingj.edu_rating.entity.User;
+import com.dreamingj.edu_rating.entity.Admin;
+import com.dreamingj.edu_rating.sevice.AdminService;
 import com.dreamingj.edu_rating.utils.Result;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
+
+@RestController
+@RequestMapping("/admin")
 public class adminController {
-//    @PostMapping("/register")
-//    public Result<String> registerController(@RequestBody User newUser){
-//        User user = userService.registerService(newUser);
-//        if(user!=null){
-//            return Result.success(user,"注册成功！");
-//        }else{
-//            return Result.error("456","用户名已存在！");
-//        }
-//    }
+    @Autowired
+    private AdminService adminService;
+    //具体业务逻辑丢给Service层
+
+    @PostMapping("/login")
+    public Result loginController(@RequestParam String adminID, @RequestParam String adminPwd){
+        Admin admin = adminService.loginService(adminID, adminPwd);
+        if(admin!=null){
+            return Result.success();
+        }else{
+            return Result.error("001","账号或密码错误！");
+        }
+    }
 }
