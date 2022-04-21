@@ -5,7 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-//@MapperScan("com.dreamingj.edu_rating.mapper")
+@MapperScan("com.dreamingj.edu_rating.mapper")
 public class EduRatingApplication {
 
     public static void main(String[] args) {

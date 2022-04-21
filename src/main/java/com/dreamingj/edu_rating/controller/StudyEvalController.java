@@ -2,7 +2,7 @@ package com.dreamingj.edu_rating.controller;
 
 import com.dreamingj.edu_rating.entity.CourseItem;
 import com.dreamingj.edu_rating.entity.StudyEval;
-import com.dreamingj.edu_rating.sevice.StudyEvalService;
+import com.dreamingj.edu_rating.service.StudyEvalService;
 import com.dreamingj.edu_rating.utils.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

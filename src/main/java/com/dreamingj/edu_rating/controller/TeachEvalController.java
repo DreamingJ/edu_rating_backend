@@ -1,15 +1,13 @@
 package com.dreamingj.edu_rating.controller;
 
-import com.dreamingj.edu_rating.entity.Course;
 import com.dreamingj.edu_rating.entity.CourseItem;
 import com.dreamingj.edu_rating.entity.TeachEval;
-import com.dreamingj.edu_rating.sevice.TeachEvalService;
+import com.dreamingj.edu_rating.service.TeachEvalService;
 import com.dreamingj.edu_rating.utils.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/teacheval")

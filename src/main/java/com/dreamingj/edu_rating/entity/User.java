@@ -1,19 +1,33 @@
 package com.dreamingj.edu_rating.entity;
 
+import com.baomidou.mybatisplus.annotation.TableId;
+import lombok.NoArgsConstructor;
 import org.apache.ibatis.jdbc.Null;
 
 //数据库的实体类
 
 public class User {
+    @TableId
     private String userID;
+
     private String userPwd;
     private String userName;
     private String deptName;//领导和专家根据deptID，在课程表中查找，确定要评的课
     private String status;  //1学生，2教师，3领导，4专家
 
+    public User(){
+    }
+
     public User(String userID, String userPwd, String userName, String deptName, String status) {
         this.userID = userID;
         this.userPwd = userPwd;
+        this.userName = userName;
+        this.deptName = deptName;
+        this.status = status;
+    }
+
+    public User(boolean selected, String userID, String userPwd,String userName, String status, String deptName) {
+        this.userID = userID;
         this.userName = userName;
         this.deptName = deptName;
         this.status = status;

@@ -1,7 +1,7 @@
 package com.dreamingj.edu_rating.controller;
 
 import com.dreamingj.edu_rating.entity.Admin;
-import com.dreamingj.edu_rating.sevice.AdminService;
+import com.dreamingj.edu_rating.service.AdminService;
 import com.dreamingj.edu_rating.utils.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
