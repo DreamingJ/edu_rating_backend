@@ -1,10 +1,18 @@
 package com.dreamingj.edu_rating.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+
+@TableName("teacheval")
 public class TeachEval {
-    int tID;
+    @TableId
+    Integer tID;
     String userID;
     String courseID;
-    boolean isSubmit;
+    String courseName;
+    @TableField("isSubmit")
+    boolean submit;
     int teachItem1;
     int teachItem2;
     int teachItem3;
@@ -12,24 +20,11 @@ public class TeachEval {
     int teachItem5;
     String teachComment;
 
-    public TeachEval(int tID, String userID, String courseID, boolean isSubmit, int teachItem1, int teachItem2, int teachItem3, int teachItem4, int teachItem5, String teachComment) {
-        this.tID = tID;
-        this.userID = userID;
-        this.courseID = courseID;
-        this.isSubmit = isSubmit;
-        this.teachItem1 = teachItem1;
-        this.teachItem2 = teachItem2;
-        this.teachItem3 = teachItem3;
-        this.teachItem4 = teachItem4;
-        this.teachItem5 = teachItem5;
-        this.teachComment = teachComment;
-    }
-
-    public int gettID() {
+    public Integer gettID() {
         return tID;
     }
 
-    public void settID(int tID) {
+    public void settID(Integer tID) {
         this.tID = tID;
     }
 
@@ -49,16 +44,40 @@ public class TeachEval {
         this.courseID = courseID;
     }
 
-    public boolean isSubmit() {
-        return isSubmit;
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
+//    public boolean isSubmit() {
+//        return isSubmit;
+//    }
+
+    public boolean getSubmit() {
+        return submit;
     }
 
     public void setSubmit(boolean submit) {
-        isSubmit = submit;
+        this.submit = submit;
     }
 
     public int getTeachItem1() {
         return teachItem1;
+    }
+
+    public TeachEval(){
+
+    }
+
+    public TeachEval(Integer tID, String userID, String courseID, String courseName, boolean submit) {
+        this.tID = tID;
+        this.userID = userID;
+        this.courseID = courseID;
+        this.courseName = courseName;
+        this.submit = submit;
     }
 
     public void setTeachItem1(int teachItem1) {
@@ -102,6 +121,20 @@ public class TeachEval {
     }
 
     public void setTeachComment(String teachComment) {
+        this.teachComment = teachComment;
+    }
+
+    public TeachEval(Integer tID, String userID, String courseID, String courseName, boolean isSubmit, int teachItem1, int teachItem2, int teachItem3, int teachItem4, int teachItem5, String teachComment) {
+        this.tID = tID;
+        this.userID = userID;
+        this.courseID = courseID;
+        this.courseName = courseName;
+        this.submit = isSubmit;
+        this.teachItem1 = teachItem1;
+        this.teachItem2 = teachItem2;
+        this.teachItem3 = teachItem3;
+        this.teachItem4 = teachItem4;
+        this.teachItem5 = teachItem5;
         this.teachComment = teachComment;
     }
 }

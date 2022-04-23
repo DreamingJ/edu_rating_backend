@@ -1,5 +1,6 @@
 package com.dreamingj.edu_rating.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.dreamingj.edu_rating.entity.CourseItem;
 import com.dreamingj.edu_rating.entity.StudyEval;
 import org.apache.ibatis.annotations.Mapper;
@@ -9,7 +10,7 @@ import org.apache.ibatis.annotations.Update;
 import java.util.List;
 
 @Mapper
-public interface StudyEvalMapper {
+public interface StudyEvalMapper extends BaseMapper<StudyEval> {
     @Select("select count(*) from studyeval where userID=#{userID} and isSubmit=0")
     int getStudyEvalNum(String userID);
 

@@ -1,8 +1,12 @@
 package com.dreamingj.edu_rating.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.dreamingj.edu_rating.entity.Course;
 import com.dreamingj.edu_rating.entity.CourseItem;
+import com.dreamingj.edu_rating.entity.TeachCourseVO;
 import com.dreamingj.edu_rating.entity.TeachEval;
+import javafx.scene.control.Pagination;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
@@ -12,7 +16,10 @@ import java.util.List;
 import java.util.Map;
 
 @Mapper
-public interface TeachEvalMapper {
+public interface TeachEvalMapper extends BaseMapper<TeachEval> {
+//    @Select("select t.tID,t.userID,t.courseID,t.isSubmit,c.courseName from course c inner join teacheval t on c.courseID = t.courseID")
+//    List<TeachCourseVO> getAdminTeachPages(Pagination page);
+
     @Select("select c.*,t.isSubmit from course c inner join teacheval t on c.courseID = t.courseID where t.userID=#{userID}")
     List<CourseItem> getTeachCourse(String userID);
 
@@ -34,3 +41,5 @@ public interface TeachEvalMapper {
     TeachEval getTeachRes( String userID,
                            String courseID);
 }
+
+
